@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class movement : MonoBehaviour{
 
@@ -13,6 +14,12 @@ public class movement : MonoBehaviour{
     public Transform groundCheck;
     public float checkRadius;
     public LayerMask whatIsGround;
+    public float bg_speed_back;
+    public float bg_speed_middle;
+    public float bg_speed_top;
+    private Image bg_back;
+    private Image bg_middle;
+    private Image bg_top;
     Animator anim;
 
     private int extraJumps;
@@ -25,6 +32,9 @@ public class movement : MonoBehaviour{
         extraJumps = extraJumpsValue;
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+        bg_back = GameObject.Find("Back").GetComponent<Image>();
+        bg_middle = GameObject.Find("Middle").GetComponent<Image>();
+        bg_top = GameObject.Find("Top").GetComponent<Image>();
     }
 
 
@@ -33,8 +43,11 @@ public class movement : MonoBehaviour{
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, checkRadius, whatIsGround);
         moveInput = Input.GetAxis("Horizontal");
         rb.velocity = new Vector2(moveInput * speed, rb.velocity.y);
-        if(facingRight == false && moveInput > 0)
-        {
+        bg_back.transform.Translate(moveInput * bg_speed_back, 0, 0);
+        bg_middle.transform.Translate(moveInput * bg_speed_middle, 0, 0);
+        bg_top.transform.Translate(moveInput * bg_speed_top, 0, 0);
+        if (facingRight == false && moveInput > 0)
+        {   
             Flip();
         } 
         else if (facingRight == true && moveInput < 0)

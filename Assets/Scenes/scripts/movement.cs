@@ -43,9 +43,9 @@ public class movement : MonoBehaviour{
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, checkRadius, whatIsGround);
         moveInput = Input.GetAxis("Horizontal");
         rb.velocity = new Vector2(moveInput * speed, rb.velocity.y);
-        bg_back.transform.Translate(moveInput * bg_speed_back, 0, 0);
-        bg_middle.transform.Translate(moveInput * bg_speed_middle, 0, 0);
-        bg_top.transform.Translate(moveInput * bg_speed_top, 0, 0);
+        bg_back.transform.Translate(-moveInput * bg_speed_back, 0, 0);
+        bg_middle.transform.Translate(-moveInput * bg_speed_middle, 0, 0);
+        bg_top.transform.Translate(-moveInput * bg_speed_top, 0, 0);
         if (facingRight == false && moveInput > 0)
         {   
             Flip();

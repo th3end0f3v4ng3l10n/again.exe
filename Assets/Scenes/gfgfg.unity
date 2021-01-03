@@ -1680,9 +1680,9 @@ MonoBehaviour:
   whatIsGround:
     serializedVersion: 2
     m_Bits: 256
-  bg_speed_back: 0.01
-  bg_speed_middle: 0.015
-  bg_speed_top: 0.024
+  bg_speed_back: 0.005
+  bg_speed_middle: 0.0075
+  bg_speed_top: 0.012
   extraJumpsValue: 0
 --- !u!95 &1939712207
 Animator:

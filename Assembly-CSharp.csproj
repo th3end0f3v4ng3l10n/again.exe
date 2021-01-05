@@ -38,6 +38,7 @@
   <ItemGroup>
      <Compile Include="Assets\Scenes\scripts\BackgroundHelper.cs" />
      <Compile Include="Assets\Scenes\scripts\CameraController.cs" />
+     <Compile Include="Assets\Scenes\scripts\MainMenuScript.cs" />
      <Compile Include="Assets\Scenes\scripts\Trigger.cs" />
      <Compile Include="Assets\Scenes\scripts\movement.cs" />
      <Compile Include="Assets\Scenes\scripts\pause_menu.cs" />

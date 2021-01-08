@@ -22,6 +22,7 @@ public class movement : MonoBehaviour{
     private Image bg_top;
     Animator anim;
 
+
     private int extraJumps;
     public int extraJumpsValue;
 

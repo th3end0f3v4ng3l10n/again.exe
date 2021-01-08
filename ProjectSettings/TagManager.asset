@@ -6,6 +6,7 @@ TagManager:
   tags:
   - shoper
   - player
+  - wall
   layers:
   - Default
   - TransparentFX
